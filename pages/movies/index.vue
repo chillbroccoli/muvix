@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import MoviesView from '~/components/views/MoviesView.vue';
+
 const { data, error } = await useFetch('/api/movies');
 
 if (error.value) {
