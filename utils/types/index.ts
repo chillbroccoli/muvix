@@ -16,6 +16,22 @@ export type MoviesResponse = {
   nowPlaying: ListResponse<Movie>;
 };
 
+export type MovieResponse = {
+  details: MovieDetails;
+  similar: ListResponse<Resource>;
+};
+
+export type TvShowsResponse = {
+  topRated: ListResponse<TvShow>;
+  popular: ListResponse<TvShow>;
+  trending: ListResponse<TvShow>;
+};
+
+export type TvShowResponse = {
+  details: TvShowDetails;
+  similar: ListResponse<Resource>;
+};
+
 export type Trending = {
   id: number;
   adult: boolean;
