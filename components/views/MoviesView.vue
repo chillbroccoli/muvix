@@ -1,6 +1,10 @@
 <script lang="ts" setup>
-import { Movie, MoviesResponse } from '@/utils/types';
+import { Movie, MoviesResponse } from '~/utils/types';
 import getRandomResource from '~/utils/helpers/getRandomResource';
+
+import ItemsList from '../list/ItemsList.vue';
+import ViewToggle from '../view-toggle/ViewToggle.vue';
+import ResourceFeatured from '../featured/ResourceFeatured.vue';
 
 const props = defineProps<MoviesResponse>();
 
