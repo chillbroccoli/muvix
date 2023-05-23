@@ -1,4 +1,4 @@
-import { HrefType, Resource } from '@/utils/types';
+import { HrefType, Resource } from '~/utils/types';
 
 export type WatchlistItem = {
   id: number;
