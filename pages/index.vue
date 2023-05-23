@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import HomeView from '~/components/views/HomeView.vue';
+
 const { data, error } = await useFetch('/api');
 
 if (error.value) {
