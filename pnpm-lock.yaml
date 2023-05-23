@@ -19,6 +19,9 @@ dependencies:
   lucide-vue-next:
     specifier: ^0.220.0
     version: 0.220.0(vue@3.3.4)
+  waait:
+    specifier: ^1.0.5
+    version: 1.0.5
 
 devDependencies:
   '@nuxt/devtools':
@@ -9196,6 +9199,10 @@ packages:
       '@vue/runtime-dom': 3.3.4
       '@vue/server-renderer': 3.3.4(vue@3.3.4)
       '@vue/shared': 3.3.4
+
+  /waait@1.0.5:
+    resolution: {integrity: sha512-wp+unA4CpqxvBUKHHv8D86fK4jWByHAWyhEXXVHfVUZfK+16ylpj7hjQ58Z8j9ntu8XNukRQT8Fi5qbyJ8rkyw==}
+    dev: false
 
   /wait-on@7.0.1:
     resolution: {integrity: sha512-9AnJE9qTjRQOlTZIldAaf/da2eW0eSRSgcqq85mXQja/DW3MriHxkpODDSUEg+Gri/rKEcXUZHe+cevvYItaog==}
