@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import nav from '@/utils/constants/nav';
+import nav from '~/utils/constants/nav';
 </script>
 
 <template>
-  <div class="h-full lg:mt-10">
+  <div class="h-full lg:mt-6">
     <ul
       class="flex flex-row items-center justify-center h-full space-x-4 lg:items-start lg:justify-start lg:space-x-0 lg:space-y-6 lg:flex-col"
     >

@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { Heart, HeartOff, Star, Calendar } from 'lucide-vue-next';
-import { Resource } from '@/utils/types';
-import useWatchlistStore from '@/stores/watchlist';
-import { POSTER_IMAGE } from '@/utils/constants/images';
-import imageNotFound from '@/assets/images/image_not_available.png';
-import getLinkHref from '@/utils/helpers/getLinkHref';
-import getWatchlistItemType from '@/utils/helpers/getWatchlistItemType';
+import { Resource } from '~/utils/types';
+import useWatchlistStore from '~/stores/watchlist';
+import { POSTER_IMAGE } from '~/utils/constants/images';
+import getLinkHref from '~/utils/helpers/getLinkHref';
+import getWatchlistItemType from '~/utils/helpers/getWatchlistItemType';
 
 const props = defineProps<{ item: Resource; hrefType: 'movies' | 'tv' }>();
 
@@ -13,11 +12,13 @@ const store = useWatchlistStore();
 
 const imageSrc = props.item.poster_path
   ? `${POSTER_IMAGE.W342}${props.item.poster_path}`
-  : imageNotFound;
+  : '/image_not_available.png';
 
-const itemInWatchlist = (store.watchlist ?? []).find(
-  (item: Resource) => item.id === props.item.id
-);
+const itemInWatchlist = computed(() => {
+  return store.watchlist.find(
+    (itemInList: Resource) => itemInList.id === props.item.id
+  );
+});
 
 const addPadding =
   props.item.vote_average &&
@@ -28,9 +29,7 @@ const title = props.item?.title ?? props.item?.name ?? '';
 const linkHref = getLinkHref(props.item, props.hrefType);
 const watchlistItemType = getWatchlistItemType(props.item, props.hrefType);
 
-const handleAddToWatchlistClick = (e: Event, item: Resource) => {
-  e.preventDefault();
-
+const handleAddToWatchlistClick = (item: Resource) => {
   store.addToWatchlist(item, watchlistItemType);
 };
 </script>
@@ -51,7 +50,7 @@ const handleAddToWatchlistClick = (e: Event, item: Resource) => {
         <button
           type="button"
           class="absolute rounded-bl-xl top-0 p-2 -right-[100%] bg-pink-500/80 group-hover:-right-0 transition-all duration-300 ease-in-out z-10"
-          @click="(event) => handleAddToWatchlistClick(event, item)"
+          @click.prevent="handleAddToWatchlistClick(item)"
         >
           <template v-if="itemInWatchlist">
             <HeartOff class="text-white" :size="24" />

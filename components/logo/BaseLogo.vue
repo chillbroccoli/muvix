@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import logo from '@/assets/images/movix-color.png';
+import logo from '~/assets/images/movix-color.png';
 </script>
 
 <template>

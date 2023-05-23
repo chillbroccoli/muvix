@@ -1,6 +1,9 @@
 <script lang="ts" setup>
-import { Resource } from '@/utils/types';
+import { Resource } from '~/utils/types';
 import useSettingsStore from '~/stores/settings';
+
+import BaseCarousel from '../carousel/BaseCarousel.vue';
+import ListItem from './ListItem.vue';
 
 type Props = {
   items: Resource[];
@@ -32,7 +35,7 @@ const props = withDefaults(defineProps<Props>(), {
 const settingsStore = useSettingsStore();
 
 const itemsToDisplay = computed(() => {
-  return props.shortened ? [...props.items].slice(0, 12) : props.items;
+  return props.shortened ? props.items.slice(0, 12) : props.items;
 });
 
 const shouldDisplayGrid = computed(() => {
@@ -58,7 +61,7 @@ const shouldDisplayCarousel = computed(() => {
 
     <template v-if="shouldDisplayGrid">
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-6">
-        <GridItem
+        <ListItem
           v-for="item in itemsToDisplay"
           :key="item.id"
           :item="item"

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Grid, Columns } from 'lucide-vue-next';
-import useSettingsStore from '../stores/settings';
+import useSettingsStore from '~/stores/settings';
 
 const store = useSettingsStore();
 </script>

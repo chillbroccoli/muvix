@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { BACKDROP_IMAGE } from '@/utils/constants/images';
-import BREAKPOINTS from '@/utils/constants/breakpoints';
-import { Resource } from '@/utils/types';
-import trimLongText from '@/utils/helpers/trimLongText';
+import { BACKDROP_IMAGE } from '~/utils/constants/images';
+import BREAKPOINTS from '~/utils/constants/breakpoints';
+import { Resource } from '~/utils/types';
+import trimLongText from '~/utils/helpers/trimLongText';
 import { Star } from 'lucide-vue-next';
 
 const props = defineProps<{ item: Resource }>();

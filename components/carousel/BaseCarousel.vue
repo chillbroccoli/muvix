@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Resource } from '../utils/types';
+import { Resource } from '~/utils/types';
 
 type Props = {
   items: Resource[];
