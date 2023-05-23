@@ -3,13 +3,24 @@ export type DisplayMode = 'grid' | 'carousel';
 const useSettingsStore = defineStore(
   'settings',
   () => {
+    const isDark = ref(true);
     const displayMode = ref<DisplayMode>('grid');
 
     function setDisplayMode(value: DisplayMode) {
       displayMode.value = value;
     }
 
-    return { displayMode, setDisplayMode };
+    watch(isDark, (newValue) => {
+      if (typeof window === undefined) return;
+
+      if (newValue) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    });
+
+    return { displayMode, setDisplayMode, isDark };
   },
   {
     persist: true,
