@@ -4,12 +4,6 @@ import { Switch } from '@headlessui/vue';
 import useSettingsStore from '~/stores/settings';
 
 const store = useSettingsStore();
-
-useHead({
-  htmlAttrs: {
-    class: store.isDark ? 'dark' : 'light',
-  },
-});
 </script>
 
 <template>
