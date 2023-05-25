@@ -5,8 +5,22 @@ import { TvShow, TvShowsResponse } from '~/utils/types';
 import ResourceFeatured from '../featured/ResourceFeatured.vue';
 import SettingsBar from '../settings-bar/SettingsBar.vue';
 import ItemsList from '../list/ItemsList.vue';
+import GenresSelectVue from '../select/GenresSelect.vue';
 
 const props = defineProps<TvShowsResponse>();
+
+const router = useRouter();
+
+const selectedGenre = ref('');
+const changeSelected = (value: string) => {
+  selectedGenre.value = value;
+};
+
+watch(selectedGenre, (newGenre) => {
+  if (newGenre) {
+    router.push({ path: '/tv/by-genre', query: { id: newGenre, page: 1 } });
+  }
+});
 
 const randomResource = getRandomResource<TvShow>(props.topRated.results);
 
@@ -27,6 +41,12 @@ const trendingSorted = [...props.trending.results].sort(
       <ResourceFeatured :item="randomResource" />
     </ClientOnly>
     <SettingsBar />
+
+    <GenresSelectVue
+      :genres="genres"
+      :selected="selectedGenre"
+      @change-selected="changeSelected"
+    />
 
     <ItemsList
       :items="topRatedSorted"
