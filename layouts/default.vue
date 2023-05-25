@@ -5,9 +5,22 @@ import useSettingsStore from '~/stores/settings';
 
 const store = useSettingsStore();
 
+useSeoMeta({
+  ogTitle: 'Movix',
+  ogImage: '/android-chrome-512x512.png',
+  ogDescription:
+    'Discover and Explore Movies and TV Shows - Your ultimate destination to lookup, check, and search for your favorite movies and TV shows',
+  twitterTitle: 'Movix',
+  twitterDescription:
+    'Discover and Explore Movies and TV Shows - Your ultimate destination to lookup, check, and search for your favorite movies and TV shows',
+  twitterImage: '/android-chrome-512x512.png',
+  twitterCard: 'summary_large_image',
+});
+
 useServerHead({
   htmlAttrs: {
     class: store.isDark ? 'dark' : '',
+    lang: 'en',
   },
 });
 </script>
