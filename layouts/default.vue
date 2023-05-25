@@ -7,7 +7,7 @@ const store = useSettingsStore();
 
 useServerHead({
   htmlAttrs: {
-    class: store.isDark ? 'dark' : 'light',
+    class: store.isDark ? 'dark' : '',
   },
 });
 </script>
