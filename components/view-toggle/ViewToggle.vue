@@ -3,16 +3,19 @@ import { Grid, Columns } from 'lucide-vue-next';
 import useSettingsStore from '~/stores/settings';
 
 const store = useSettingsStore();
+
+const buttonClass =
+  'bg-pink-500/70 dark:bg-pink-500/30 hover:bg-pink-500/60 dark:hover:bg-pink-500/40 rounded-md p-1';
 </script>
 
 <template>
-  <div class="p-4 px-8">
-    <span class="flex items-center shadow-sm p-2">
+  <div class="text-white">
+    <span class="flex items-center">
       <button
         type="button"
         :class="[
-          'bg-pink-500/30 hover:bg-pink-500/40 rounded-md p-1',
-          store.displayMode === 'grid' && 'bg-pink-500/60',
+          buttonClass,
+          store.displayMode === 'grid' && 'bg-pink-800 dark:bg-pink-500/60',
         ]"
         @click="store.setDisplayMode('grid')"
       >
@@ -22,8 +25,8 @@ const store = useSettingsStore();
       <button
         type="button"
         :class="[
-          'bg-pink-500/30 hover:bg-pink-500/40 rounded-md p-1',
-          store.displayMode === 'carousel' && 'bg-pink-500/60',
+          buttonClass,
+          store.displayMode === 'carousel' && 'bg-pink-800 dark:bg-pink-500/60',
         ]"
         @click="store.setDisplayMode('carousel')"
       >
