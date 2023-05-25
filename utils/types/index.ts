@@ -14,6 +14,7 @@ export type MoviesResponse = {
   topRated: ListResponse<Movie>;
   popular: ListResponse<Movie>;
   nowPlaying: ListResponse<Movie>;
+  genres: Genre[];
 };
 
 export type MovieResponse = {
@@ -25,11 +26,22 @@ export type TvShowsResponse = {
   topRated: ListResponse<TvShow>;
   popular: ListResponse<TvShow>;
   trending: ListResponse<TvShow>;
+  genres: Genre[];
 };
 
 export type TvShowResponse = {
   details: TvShowDetails;
   similar: ListResponse<Resource>;
+};
+
+export type MoviesByGenreResponse = {
+  movies: ListResponse<Movie>;
+  genres: Genre[];
+};
+
+export type TvShowsByGenreResponse = {
+  tvShows: ListResponse<TvShow>;
+  genres: Genre[];
 };
 
 export type Trending = {
