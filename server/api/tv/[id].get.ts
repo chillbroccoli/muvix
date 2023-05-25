@@ -1,5 +1,4 @@
 import { getDetails, getSimilar } from '../../../utils/api';
-import { TvShowResponse } from '../../../utils/types';
 
 export default defineEventHandler(async (event) => {
   const id = event.context.params?.id as string;
@@ -12,5 +11,5 @@ export default defineEventHandler(async (event) => {
   return {
     details,
     similar,
-  } as TvShowResponse;
+  };
 });
