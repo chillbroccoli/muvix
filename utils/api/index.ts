@@ -53,7 +53,7 @@ export async function multiSearch(query?: string) {
 
 export const getGenres = async (type: HrefType) =>
   getResource(
-    `${BASE_URL}/genre/${type}/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`
+    `${BASE_URL}/genre/${type}/list?api_key=${API_KEY}&language=en-US`
   );
 
 export const getByGenre = async (type: HrefType, genreId: string, page = 1) =>
