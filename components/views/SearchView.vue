@@ -42,7 +42,7 @@ const { data, pending } = await useAsyncData(
       />
     </div>
     <div
-      v-if="!data?.searchResults?.results?.length && !pending"
+      v-if="data && data?.searchResults?.results?.length === 0 && !pending"
       class="flex items-center justify-center p-2 py-8 font-light text-gray-400"
     >
       <p>Nothing has been found 😭</p>
