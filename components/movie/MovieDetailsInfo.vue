@@ -36,8 +36,14 @@ const handleAddToWatchlistClick = (item: Resource) => {
         class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-transparent border rounded-md shadow-sm border-pink-500/70 w-fit focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-600"
         @click.prevent="handleAddToWatchlistClick(item)"
       >
-        <HeartOff v-if="itemInWatchlist" class="text-pink-500/70" />
-        <Heart v-else class="text-pink-500/70" />
+        <template v-if="itemInWatchlist">
+          <p class="text-gray-500 dark:text-gray-300">Remove from watchlist</p>
+          <HeartOff class="ml-2 text-pink-500/70" />
+        </template>
+        <template v-else>
+          <p class="text-gray-500 dark:text-gray-300">Add to watchlist</p>
+          <Heart class="ml-2 text-pink-500/70" />
+        </template>
       </button>
     </div>
     <div v-if="item.imdb_id" class="pt-4 lg:pt-0">
