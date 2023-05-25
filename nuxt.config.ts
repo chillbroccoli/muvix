@@ -3,7 +3,22 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Movix',
-      meta: [{ name: 'description', content: 'Place for movies and tv shows' }],
+      htmlAttrs: {
+        lang: 'en',
+      },
+      meta: [
+        {
+          name: 'description',
+          content: 'Discover and Explore Movies and TV Shows',
+        },
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico',
+        },
+      ],
     },
   },
   modules: [
