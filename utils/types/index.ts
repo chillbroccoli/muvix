@@ -205,6 +205,7 @@ export type TvShowDetails = {
   spoken_languages: { iso_639_1: string; name: string; english_name: string }[];
   status: string;
   tagline: string;
+  overview: string;
   type: string;
   vote_average: number;
   vote_count: number;
