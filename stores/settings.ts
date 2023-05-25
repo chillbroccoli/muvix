@@ -14,7 +14,9 @@ const useSettingsStore = defineStore(
       if (typeof window === undefined) return;
 
       if (newValue) {
-        document.documentElement.classList.add('dark');
+        if (!document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.add('dark');
+        }
       } else {
         document.documentElement.classList.remove('dark');
       }
