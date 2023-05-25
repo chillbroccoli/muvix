@@ -4,7 +4,7 @@ const useSettingsStore = defineStore(
   'settings',
   () => {
     const isDark = ref(true);
-    const displayMode = ref<DisplayMode>('grid');
+    const displayMode = ref<DisplayMode>('carousel');
 
     function setDisplayMode(value: DisplayMode) {
       displayMode.value = value;
