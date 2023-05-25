@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply outline-pink-500;
+  }
+
   html,
   body,
   #__nuxt {
@@ -11,6 +15,6 @@
   }
 
   html {
-    @apply bg-pink-50 dark:bg-gray-900;
+    @apply bg-gray-50 dark:bg-gray-900;
   }
 }
