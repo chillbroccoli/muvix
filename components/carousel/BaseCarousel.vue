@@ -13,7 +13,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="flex p-4 space-x-6 overflow-x-scroll flex-nowrap snap-x">
+  <div class="flex px-0 p-4 space-x-6 overflow-x-scroll flex-nowrap snap-x">
     <CarouselItem
       v-for="item in items"
       :key="item.id"
