@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import MoviesByGenreView from '~/components/views/MoviesByGenreView.vue';
+import { Genre } from '~/utils/types';
 
 definePageMeta({
   key: (r) => r.fullPath,
@@ -17,6 +18,22 @@ const { data, error } = await useFetch('/api/movies/by-genre', {
 if (error.value) {
   throw createError(error.value);
 }
+
+const genre = data?.value?.genres.find(
+  (item: Genre) => item.id === Number(route.query?.id)
+);
+
+const pageTitle = `Movix | Movies - ${genre?.name ?? 'By Genre'}`;
+
+useSeoMeta({
+  title: pageTitle,
+  ogTitle: pageTitle,
+  twitterTitle: pageTitle,
+});
+
+useHead({
+  title: pageTitle,
+});
 </script>
 
 <template>

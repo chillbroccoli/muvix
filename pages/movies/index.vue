@@ -6,6 +6,18 @@ const { data, error } = await useFetch('/api/movies');
 if (error.value) {
   throw createError(error.value);
 }
+
+const pageTitle = 'Movix | Movies';
+
+useSeoMeta({
+  title: pageTitle,
+  ogTitle: pageTitle,
+  twitterTitle: pageTitle,
+});
+
+useHead({
+  title: pageTitle,
+});
 </script>
 
 <template>

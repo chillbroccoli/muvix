@@ -1,5 +1,17 @@
 <script lang="ts" setup>
 import SearchView from '~/components/views/SearchView.vue';
+
+const pageTitle = 'Movix | Search';
+
+useSeoMeta({
+  title: pageTitle,
+  ogTitle: pageTitle,
+  twitterTitle: pageTitle,
+});
+
+useHead({
+  title: pageTitle,
+});
 </script>
 
 <template>

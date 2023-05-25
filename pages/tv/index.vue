@@ -6,6 +6,18 @@ const { data, error } = await useFetch('/api/tv');
 if (error.value) {
   throw createError(error.value);
 }
+
+const pageTitle = 'Movix | TV Shows';
+
+useSeoMeta({
+  title: pageTitle,
+  ogTitle: pageTitle,
+  twitterTitle: pageTitle,
+});
+
+useHead({
+  title: pageTitle,
+});
 </script>
 
 <template>
