@@ -10,26 +10,16 @@ type Props = {
   title: string;
   shortened?: boolean;
   hrefType?: 'movies' | 'tv';
-  withPagination?: boolean;
   itemsPerPage?: number;
-  currentPage?: number;
-  totalPages?: number;
   defaultDisplayMode?: 'grid' | 'carousel';
-  goToPreviousPage?: () => void;
-  goToNextPage?: () => void;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   items: () => [],
   shortened: false,
   hrefType: 'movies',
-  withPagination: false,
   itemsPerPage: undefined,
-  currentPage: undefined,
-  totalPages: undefined,
   defaultDisplayMode: undefined,
-  goToPreviousPage: undefined,
-  goToNextPage: undefined,
 });
 
 const settingsStore = useSettingsStore();
