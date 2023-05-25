@@ -1,5 +1,6 @@
 const TMDB_IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 export const IMDB_LINK_BASE_URL = 'https://www.imdb.com/title';
+export const FALLBACK_IMAGE = '/image_not_available.png';
 
 export const POSTER_IMAGE = {
   W92: `${TMDB_IMAGE_BASE_URL}/w92`,
