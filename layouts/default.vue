@@ -14,7 +14,7 @@ useServerHead({
 
 <template>
   <div
-    class="min-h-full bg-pink-50 dark:bg-zinc-900 dark:text-white text-gray-500"
+    class="min-h-full bg-gray-50 dark:bg-zinc-900 dark:text-white text-gray-600"
   >
     <SideBar />
     <div
