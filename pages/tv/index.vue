@@ -14,6 +14,7 @@ if (error.value) {
       :top-rated="data.topRated"
       :popular="data.popular"
       :trending="data.trending"
+      :genres="data.genres"
     />
   </div>
 </template>
