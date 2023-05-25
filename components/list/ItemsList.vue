@@ -60,7 +60,9 @@ const shouldDisplayCarousel = computed(() => {
     </h5>
 
     <template v-if="shouldDisplayGrid">
-      <div class="grid grid-cols-1 gap-6 lg:grid-cols-6">
+      <div
+        class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+      >
         <ListItem
           v-for="item in itemsToDisplay"
           :key="item.id"
