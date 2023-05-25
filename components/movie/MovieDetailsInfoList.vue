@@ -10,17 +10,20 @@ defineProps<{ item: MovieDetails }>();
 <template>
   <ul class="mt-6 space-y-2 font-light">
     <li class="flex items-center">
-      <span class="w-[120px]">Released</span>
+      <span class="w-[120px]">Release</span>
       <span>{{ item.release_date }}</span>
     </li>
-    <li class="flex items-center">
+    <li
+      v-if="item.vote_average && item.vote_average > 0"
+      class="flex items-center"
+    >
       <span class="w-[120px]">Rating</span>
       <div class="flex space-x-1">
-        <Star class="text-pink-500" />
+        <Star class="fill-pink-500 stroke-pink-600" />
         <span>{{ item.vote_average.toFixed(1) }}</span>
       </div>
     </li>
-    <li class="flex items-center">
+    <li v-if="item.runtime" class="flex items-center">
       <span class="w-[120px]">Runtime</span>
       <span>{{ convertTime(item.runtime) }}</span>
     </li>
@@ -36,7 +39,7 @@ defineProps<{ item: MovieDetails }>();
       <span class="min-w-[120px] w-fit overflow-hidden">Genres</span>
       <div class="flex flex-wrap space-x-1">
         <span v-for="(genre, index) in item.genres" :key="genre.id">
-          {{ genre.name }} {{ index < item.genres.length - 1 && ',' }}
+          {{ genre.name }} {{ index < item.genres.length - 1 ? ',' : '' }}
         </span>
       </div>
     </li>
@@ -48,7 +51,7 @@ defineProps<{ item: MovieDetails }>();
           :key="language.name"
         >
           {{ language.name }}
-          {{ index < item.spoken_languages.length - 1 && ',' }}
+          {{ index < item.spoken_languages.length - 1 ? ',' : '' }}
         </span>
       </div>
     </li>
@@ -60,7 +63,7 @@ defineProps<{ item: MovieDetails }>();
           :key="company.id"
         >
           {{ company.name }}
-          {{ index < item.production_companies.length - 1 && ',' }}
+          {{ index < item.production_companies.length - 1 ? ',' : '' }}
         </span>
       </div>
     </li>
