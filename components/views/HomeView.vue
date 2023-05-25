@@ -3,8 +3,8 @@ import { HomeResponse, Movie, TvShow } from '~/utils/types';
 import getRandomResource from '~/utils/helpers/getRandomResource';
 
 import ItemsList from '../list/ItemsList.vue';
-import ViewToggle from '../view-toggle/ViewToggle.vue';
 import ResourceFeatured from '../featured/ResourceFeatured.vue';
+import SettingsBar from '../settings-bar/SettingsBar.vue';
 
 const props = defineProps<HomeResponse>();
 
@@ -19,9 +19,7 @@ const randomTrending = getRandomResource<Movie | TvShow>([
     <ClientOnly>
       <ResourceFeatured :item="randomTrending" />
     </ClientOnly>
-    <div className="pt-3">
-      <ViewToggle />
-    </div>
+    <SettingsBar />
     <ItemsList
       :items="movies.results"
       title="Trending Movies"

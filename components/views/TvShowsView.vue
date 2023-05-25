@@ -3,7 +3,7 @@ import getRandomResource from '~/utils/helpers/getRandomResource';
 import { TvShow, TvShowsResponse } from '~/utils/types';
 
 import ResourceFeatured from '../featured/ResourceFeatured.vue';
-import ViewToggle from '../view-toggle/ViewToggle.vue';
+import SettingsBar from '../settings-bar/SettingsBar.vue';
 import ItemsList from '../list/ItemsList.vue';
 
 const props = defineProps<TvShowsResponse>();
@@ -23,10 +23,10 @@ const trendingSorted = [...props.trending.results].sort(
 
 <template>
   <div class="w-full">
-    <ResourceFeatured :item="randomResource" />
-    <div class="pt-3">
-      <ViewToggle />
-    </div>
+    <ClientOnly>
+      <ResourceFeatured :item="randomResource" />
+    </ClientOnly>
+    <SettingsBar />
 
     <ItemsList
       :items="topRatedSorted"

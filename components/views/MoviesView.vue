@@ -3,7 +3,7 @@ import { Movie, MoviesResponse } from '~/utils/types';
 import getRandomResource from '~/utils/helpers/getRandomResource';
 
 import ItemsList from '../list/ItemsList.vue';
-import ViewToggle from '../view-toggle/ViewToggle.vue';
+import SettingsBar from '../settings-bar/SettingsBar.vue';
 import ResourceFeatured from '../featured/ResourceFeatured.vue';
 
 const props = defineProps<MoviesResponse>();
@@ -12,13 +12,11 @@ const randomTrending = getRandomResource<Movie>([...props.topRated.results]);
 </script>
 
 <template>
-  <div class="h-full w-full">
+  <div class="w-full h-full">
     <ClientOnly>
       <ResourceFeatured :item="randomTrending" />
     </ClientOnly>
-    <div className="pt-3">
-      <ViewToggle />
-    </div>
+    <SettingsBar />
 
     <ItemsList
       :items="popular.results"

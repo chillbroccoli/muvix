@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import useWatchlistStore, { WatchlistItem } from '~/stores/watchlist';
 
-import ViewToggle from '../view-toggle/ViewToggle.vue';
+import SettingsBar from '../settings-bar/SettingsBar.vue';
 import ItemsList from '../list/ItemsList.vue';
 
 const store = useWatchlistStore();
@@ -16,9 +16,7 @@ const tvShows = store.watchlist.filter(
 
 <template>
   <div>
-    <div class="pt-3">
-      <ViewToggle />
-    </div>
+    <SettingsBar />
     <ItemsList :items="movies" title="Movies" href-type="movies" />
     <ItemsList :items="tvShows" title="Tv Shows" href-type="tv" />
   </div>

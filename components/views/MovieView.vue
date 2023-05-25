@@ -8,7 +8,9 @@ defineProps<MovieResponse>();
 
 <template>
   <div class="w-full">
-    <ResourceFeatured :item="details" />
+    <ClientOnly>
+      <ResourceFeatured :item="details" />
+    </ClientOnly>
     <MovieDetails :item="details" :similar="similar.results" />
   </div>
 </template>

@@ -23,14 +23,14 @@ const { data, pending } = await useAsyncData(
 
 <template>
   <div>
-    <div>
+    <div class="p-0.5">
       <label for="query" class="sr-only">Search</label>
       <input
         id="query"
         v-model="searchQuery"
         type="text"
         name="query"
-        class="block w-full px-6 py-4 text-lg text-gray-400 border-0 border-b-2 shadow-sm outline-none bg-zinc-800 border-b-zinc-600 placeholder:text-gray-400 placeholder:text-lg focus:ring-0 focus:border-b-pink-500"
+        class="block w-full px-6 py-4 text-lg dark:bg-zinc-700 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-500 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 focus:dark:ring-pink-500"
         placeholder="Search..."
       />
     </div>

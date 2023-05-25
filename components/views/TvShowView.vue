@@ -9,7 +9,9 @@ defineProps<TvShowResponse>();
 
 <template>
   <div class="w-full">
-    <ResourceFeatured :item="details" />
+    <ClientOnly>
+      <ResourceFeatured :item="details" />
+    </ClientOnly>
     <TvShowDetails :item="details" :similar="similar.results" />
   </div>
 </template>
