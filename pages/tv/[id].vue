@@ -12,7 +12,7 @@ if (error.value) {
   throw createError(error.value);
 }
 
-const pageTitle = `Movix | ${data?.value?.details?.name}`;
+const pageTitle = `Muvix | ${data?.value?.details?.name}`;
 const pageDescription = `${data?.value?.details?.tagline}`;
 
 useSeoMeta({

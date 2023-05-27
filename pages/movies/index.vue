@@ -7,7 +7,7 @@ if (error.value) {
   throw createError(error.value);
 }
 
-const pageTitle = 'Movix | Movies';
+const pageTitle = 'Muvix | Movies';
 
 useSeoMeta({
   title: pageTitle,

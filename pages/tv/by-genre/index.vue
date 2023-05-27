@@ -23,7 +23,7 @@ const genre = data?.value?.genres.find(
   (item: Genre) => item.id === Number(route.query?.id)
 );
 
-const pageTitle = `Movix | Tv Shows - ${genre?.name ?? 'By Genre'}`;
+const pageTitle = `Muvix | Tv Shows - ${genre?.name ?? 'By Genre'}`;
 
 useSeoMeta({
   title: pageTitle,

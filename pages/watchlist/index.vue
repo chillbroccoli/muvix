@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import WatchlistView from '~/components/views/WatchlistView.vue';
 
-const pageTitle = 'Movix | Watchlist';
+const pageTitle = 'Muvix | Watchlist';
 
 useSeoMeta({
   title: pageTitle,

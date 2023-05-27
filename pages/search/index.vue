@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import SearchView from '~/components/views/SearchView.vue';
 
-const pageTitle = 'Movix | Search';
+const pageTitle = 'Muvix | Search';
 
 useSeoMeta({
   title: pageTitle,

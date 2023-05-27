@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Movix',
+      title: 'Muvix',
       htmlAttrs: {
         lang: 'en',
       },
