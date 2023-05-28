@@ -1,5 +1,4 @@
 import { getTrending } from '../../utils/api';
-import { HomeResponse } from '../../utils/types';
 
 export default defineEventHandler(async () => {
   const [movies, tv] = await Promise.all([
@@ -10,5 +9,5 @@ export default defineEventHandler(async () => {
   return {
     movies,
     tv,
-  } as HomeResponse;
+  };
 });
