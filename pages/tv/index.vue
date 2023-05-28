@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import TvShowsView from '~/components/views/TvShowsView.vue';
+import { TvShowsResponse } from '~/utils/types';
 
-const { data, error } = await useFetch('/api/tv');
+const { data, error } = await useFetch<TvShowsResponse>('/api/tv');
 
 if (error.value) {
   throw createError(error.value);
