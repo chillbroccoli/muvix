@@ -27,7 +27,7 @@ const imageSrc = `${POSTER_IMAGE.W342}${props.item?.poster_path}`;
       <h5 class="pb-4 text-3xl font-semibold tracking-tighter">
         Similar Tv Shows
       </h5>
-      <BaseCarousel :items="similar" />
+      <BaseCarousel :items="similar" href-type="tv" />
     </div>
   </div>
 </template>
