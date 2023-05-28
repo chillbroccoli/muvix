@@ -4,7 +4,6 @@ import {
   getPopular,
   getTopRated,
 } from '../../../utils/api';
-import { MoviesResponse } from '../../../utils/types';
 
 export default defineEventHandler(async () => {
   const [topRated, popular, nowPlaying, genres] = await Promise.all([
@@ -19,5 +18,5 @@ export default defineEventHandler(async () => {
     popular,
     nowPlaying,
     genres: genres.genres,
-  } as MoviesResponse;
+  };
 });
