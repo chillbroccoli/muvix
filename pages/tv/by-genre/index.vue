@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import TvShowsByGenreView from '~/components/views/TvShowsByGenreView.vue';
-import { Genre } from '~/utils/types';
+import { Genre, TvShowsByGenreResponse } from '~/utils/types';
 
 definePageMeta({
   key: (r) => r.fullPath,
@@ -8,12 +8,15 @@ definePageMeta({
 
 const route = useRoute();
 
-const { data, error } = await useFetch('/api/tv/by-genre', {
-  query: {
-    id: route.query?.id,
-    page: route.query?.page,
-  },
-});
+const { data, error } = await useFetch<TvShowsByGenreResponse>(
+  '/api/tv/by-genre',
+  {
+    query: {
+      id: route.query?.id,
+      page: route.query?.page,
+    },
+  }
+);
 
 if (error.value) {
   throw createError(error.value);
