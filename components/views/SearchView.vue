@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ListResponse, Resource } from '~/utils/types';
 import ItemsList from '../list/ItemsList.vue';
 import BaseLoader from '../loader/BaseLoader.vue';
 
@@ -7,7 +8,9 @@ const route = useRoute();
 const searchQuery = ref(route.query?.q ?? '');
 const debouncedQuery = refDebounced(searchQuery, 600);
 
-const { data, pending } = await useAsyncData(
+const { data, pending } = await useAsyncData<{
+  searchResults: ListResponse<Resource>;
+}>(
   'search',
   () =>
     $fetch('/api/search', {
