@@ -1,5 +1,4 @@
 import { getByGenre, getGenres } from '../../../../utils/api';
-import { TvShowsByGenreResponse } from '../../../../utils/types';
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event);
@@ -12,5 +11,5 @@ export default defineEventHandler(async (event) => {
   return {
     tvShows,
     genres: genres.genres,
-  } as TvShowsByGenreResponse;
+  };
 });
